@@ -8,7 +8,7 @@ const checkAndUpdateBalance = async (companyName, type) => {
     throw new Error('Invalid type');
   }
 
-  const balance = await getBalance(email);
+  const balance = await getBalance(companyName);
 
   if (balance >= cost) {
     await decreaseBalance(companyName, cost);
