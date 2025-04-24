@@ -12,7 +12,7 @@ app.post('/rating/check-balance', async (req, res) => {
   
     try {
       // Call the other pod to get the balance of the user
-      const balanceResponse = await axios.post('http://localhost:3000/auth/show-balance', {
+      const balanceResponse = await axios.post('https://marketplace-vr.onrender.com/auth/show-balance', {
         email: email
       });
   
@@ -31,7 +31,7 @@ app.post('/rating/check-balance', async (req, res) => {
       // Check if the balance is sufficient
       if (balance >= cost) {
         // Proceed to decrease balance by calling the decrease-balance API
-        const decreaseResponse = await axios.post('http://localhost:3000/auth/decrease-balance', {
+        const decreaseResponse = await axios.post('https://marketplace-vr.onrender.com/auth/decrease-balance', {
           email: email,
           amount: cost
         });
